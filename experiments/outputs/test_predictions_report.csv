@@ -1,0 +1,4 @@
+home_type,actual_price,current_model_prediction,specialized_model_prediction,absolute_difference,selected_model
+Condo,388000.0,446874.9375,480349.75,33474.8125,specialized
+House,699000.0,845474.875,1379782.25,534307.375,specialized
+Townhouse,539900.0,558931.5,556658.8125,2272.6875,specialized

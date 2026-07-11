@@ -1,0 +1,123 @@
+feature,importance
+num__estimated_area_sqft,0.35507807
+num__bathrooms,0.18595804
+num__Distance_to_Subway,0.057087306
+num__Restaurants_Within_1km,0.049635608
+cat__Neighbourhood_Rosedale-Moore Park,0.037214
+num__Distance_to_Bank,0.028881127
+num__Distance_to_Park,0.023617154
+cat__Neighbourhood_Annex,0.02041637
+num__Distance_to_School,0.017824028
+num__bedrooms,0.017176466
+cat__Neighbourhood_Wellington Place,0.016757483
+num__Parks_Within_2km,0.0151685905
+num__longitude,0.01473037
+cat__Neighbourhood_Casa Loma,0.013369019
+num__Distance_to_Pharmacy,0.012547835
+num__Distance_to_Hospital,0.012060108
+cat__Neighbourhood_Greenwood-Coxwell,0.011859914
+cat__Neighbourhood_Bay-Cloverhill,0.011261206
+num__Schools_Within_2km,0.011034779
+num__latitude,0.01066278
+cat__Neighbourhood_Yonge-St.Clair,0.008759233
+num__Distance_to_Grocery,0.008637145
+num__Distance_to_Library,0.00779757
+cat__Neighbourhood_Downtown Yonge East,0.0065650935
+cat__Neighbourhood_St Lawrence-East Bayfront-The Islands,0.0038937978
+cat__Neighbourhood_Junction Area,0.003758568
+num__bedrooms_plus,0.0036885275
+cat__Neighbourhood_Yonge-Eglinton,0.0034519185
+cat__Neighbourhood_Mount Pleasant East,0.0029747204
+cat__Neighbourhood_Lawrence Park North,0.0024708211
+cat__Neighbourhood_East End-Danforth,0.0024290844
+cat__Neighbourhood_North Toronto,0.0019613018
+cat__Neighbourhood_Harbourfront-CityPlace,0.0018969289
+cat__Neighbourhood_Cabbagetown-South St.James Town,0.0017024484
+cat__Neighbourhood_The Beaches,0.0016661155
+cat__Neighbourhood_High Park-Swansea,0.0016168328
+cat__Neighbourhood_South Parkdale,0.0014215483
+cat__Neighbourhood_Banbury-Don Mills,0.0012762526
+cat__Neighbourhood_Church-Wellesley,0.0012678722
+cat__Neighbourhood_Yonge-Bay Corridor,0.0012520986
+cat__Neighbourhood_Lawrence Park South,0.0012474594
+cat__Neighbourhood_Roncesvalles,0.0010642356
+cat__Neighbourhood_Kensington-Chinatown,0.0010470446
+cat__Neighbourhood_Forest Hill South,0.0009740682
+cat__Neighbourhood_Moss Park,0.00093467406
+cat__Neighbourhood_East Willowdale,0.00089263363
+cat__Neighbourhood_Weston-Pelham Park,0.00072765694
+cat__Neighbourhood_West Queen West,0.00069604215
+cat__Neighbourhood_Trinity-Bellwoods,0.00068407034
+cat__Neighbourhood_High Park North,0.00067754515
+cat__Neighbourhood_Eringate-Centennial-West Deane,0.00022642864
+cat__Neighbourhood_Bridle Path-Sunnybrook-York Mills,0.0
+cat__Neighbourhood_Bayview Village,0.0
+cat__Neighbourhood_Bathurst Manor,0.0
+cat__home_type_bucket_CONDO,0.0
+cat__home_type_CONDO,0.0
+cat__Neighbourhood_Agincourt South-Malvern West,0.0
+cat__Neighbourhood_Avondale,0.0
+cat__Neighbourhood_Forest Hill North,0.0
+cat__Neighbourhood_Fenside-Parkwoods,0.0
+cat__Neighbourhood_Etobicoke City Centre,0.0
+cat__Neighbourhood_Englemount-Lawrence,0.0
+cat__Neighbourhood_Edenbridge-Humber Valley,0.0
+cat__Neighbourhood_Elms-Old Rexdale,0.0
+cat__Neighbourhood_Dufferin Grove,0.0
+cat__Neighbourhood_East L'Amoreaux,0.0
+cat__Neighbourhood_Danforth,0.0
+cat__Neighbourhood_Downsview,0.0
+cat__Neighbourhood_Dovercourt Village,0.0
+cat__Neighbourhood_Brookhaven-Amesbury,0.0
+cat__Neighbourhood_Clairlea-Birchmount,0.0
+cat__Neighbourhood_Clanton Park,0.0
+cat__Neighbourhood_Cliffcrest,0.0
+cat__Neighbourhood_Corso Italia-Davenport,0.0
+cat__Neighbourhood_Birchcliffe-Cliffside,0.0
+cat__Neighbourhood_Bendale-Glen Andrew,0.0
+cat__Neighbourhood_Bedford Park-Nortown,0.0
+cat__Neighbourhood_Black Creek,0.0
+cat__Neighbourhood_Bayview Woods-Steeles,0.0
+cat__Neighbourhood_Blake-Jones,0.0
+cat__Neighbourhood_Briar Hill-Belgravia,0.0
+cat__Neighbourhood_Islington,0.0
+cat__Neighbourhood_Keelesdale-Eglinton West,0.0
+cat__Neighbourhood_Junction-Wallace Emerson,0.0
+cat__Neighbourhood_Humewood-Cedarvale,0.0
+cat__Neighbourhood_Humber Bay Shores,0.0
+cat__Neighbourhood_Hillcrest Village,0.0
+cat__Neighbourhood_Henry Farm,0.0
+cat__Neighbourhood_Fort York-Liberty Village,0.0
+cat__Neighbourhood_Glenfield-Jane Heights,0.0
+cat__Neighbourhood_Oakdale-Beverley Heights,0.0
+cat__Neighbourhood_O'Connor-Parkview,0.0
+cat__Neighbourhood_North St.James Town,0.0
+cat__Neighbourhood_North Riverdale,0.0
+cat__Neighbourhood_Mount Olive-Silverstone-Jamestown,0.0
+cat__Neighbourhood_Leaside-Bennington,0.0
+cat__Neighbourhood_Little Portugal,0.0
+cat__Neighbourhood_Mimico-Queensway,0.0
+cat__Neighbourhood_Kingsview Village-The Westway,0.0
+cat__Neighbourhood_L'Amoreaux West,0.0
+cat__Neighbourhood_Lansing-Westgate,0.0
+cat__Neighbourhood_Humber Heights-Westmount,0.0
+cat__Neighbourhood_South Eglinton-Davisville,0.0
+cat__Neighbourhood_Regent Park,0.0
+cat__Neighbourhood_Rockcliffe-Smythe,0.0
+cat__Neighbourhood_Palmerston-Little Italy,0.0
+cat__Neighbourhood_Thorncliffe Park,0.0
+cat__Neighbourhood_Taylor-Massey,0.0
+cat__Neighbourhood_Tam O'Shanter-Sullivan,0.0
+cat__Neighbourhood_Stonegate-Queensway,0.0
+cat__Neighbourhood_South Riverdale,0.0
+cat__Neighbourhood_St.Andrew-Windfields,0.0
+cat__Neighbourhood_Pelmo Park-Humberlea,0.0
+cat__Neighbourhood_West Humber-Clairville,0.0
+cat__Neighbourhood_Weston,0.0
+cat__Neighbourhood_Westminster-Branson,0.0
+cat__Neighbourhood_University,0.0
+cat__Neighbourhood_Wexford/Maryvale,0.0
+cat__Neighbourhood_Wychwood,0.0
+cat__Neighbourhood_Woodbine Corridor,0.0
+cat__Neighbourhood_Woburn North,0.0
+cat__Neighbourhood_Yorkdale-Glen Park,0.0

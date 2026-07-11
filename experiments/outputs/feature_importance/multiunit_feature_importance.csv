@@ -1,0 +1,66 @@
+feature,importance
+cat__Neighbourhood_Junction-Wallace Emerson,0.20114699
+num__estimated_area_sqft,0.15208791
+cat__Neighbourhood_Annex,0.095680654
+num__bathrooms,0.054023523
+num__Distance_to_School,0.045077924
+cat__Neighbourhood_Dufferin Grove,0.04454889
+cat__Neighbourhood_University,0.03739223
+num__Schools_Within_2km,0.033553477
+num__Distance_to_Subway,0.029345572
+cat__Neighbourhood_Church-Wellesley,0.025583329
+cat__Neighbourhood_Rosedale-Moore Park,0.025323385
+cat__home_type_TOWNHOUSE,0.022671254
+num__bedrooms_plus,0.019818524
+num__Parks_Within_2km,0.019699717
+cat__Neighbourhood_Danforth,0.01947533
+num__bedrooms,0.014712434
+num__Distance_to_Bank,0.014652606
+cat__Neighbourhood_Trinity-Bellwoods,0.013863638
+num__Restaurants_Within_1km,0.012537751
+num__latitude,0.01087051
+cat__Neighbourhood_Moss Park,0.009601307
+cat__Neighbourhood_Dovercourt Village,0.009440832
+cat__home_type_DUPLEX_TRIPLEX_FOURPLEX,0.008903066
+num__Distance_to_Library,0.0088821
+num__longitude,0.00883591
+num__Distance_to_Pharmacy,0.008156462
+cat__Neighbourhood_The Beaches,0.0074835415
+num__Distance_to_Park,0.0072630867
+cat__Neighbourhood_Greenwood-Coxwell,0.00690232
+num__Distance_to_Hospital,0.0065215654
+cat__Neighbourhood_South Riverdale,0.0056678914
+num__Distance_to_Grocery,0.004773097
+cat__Neighbourhood_Lawrence Park South,0.0036530395
+cat__Neighbourhood_Wychwood,0.0034689829
+cat__Neighbourhood_Playter Estates-Danforth,0.0025327064
+cat__Neighbourhood_High Park-Swansea,0.0021107853
+cat__Neighbourhood_Runnymede-Bloor West Village,0.00084896345
+cat__Neighbourhood_Yonge-Eglinton,0.0006828205
+cat__Neighbourhood_Kensington-Chinatown,0.00064983073
+cat__Neighbourhood_North Riverdale,0.0005905122
+cat__Neighbourhood_Corso Italia-Davenport,0.0004805151
+cat__Neighbourhood_Regent Park,0.00024822025
+cat__Neighbourhood_Woodbine Corridor,0.00019952374
+cat__Neighbourhood_Blake-Jones,3.7262744e-05
+cat__Neighbourhood_East End-Danforth,0.0
+cat__home_type_bucket_TOWNHOUSE,0.0
+cat__home_type_bucket_DUPLEX_TRIPLEX_FOURPLEX,0.0
+cat__Neighbourhood_Cabbagetown-South St.James Town,0.0
+cat__Neighbourhood_Casa Loma,0.0
+cat__Neighbourhood_Fort York-Liberty Village,0.0
+cat__Neighbourhood_Forest Hill South,0.0
+cat__Neighbourhood_Palmerston-Little Italy,0.0
+cat__Neighbourhood_Mimico-Queensway,0.0
+cat__Neighbourhood_Little Portugal,0.0
+cat__Neighbourhood_High Park North,0.0
+cat__Neighbourhood_Junction Area,0.0
+cat__Neighbourhood_Lawrence Park North,0.0
+cat__Neighbourhood_Humewood-Cedarvale,0.0
+cat__Neighbourhood_Oakwood Village,0.0
+cat__Neighbourhood_Mount Pleasant East,0.0
+cat__Neighbourhood_Roncesvalles,0.0
+cat__Neighbourhood_South Parkdale,0.0
+cat__Neighbourhood_West Queen West,0.0
+cat__Neighbourhood_Weston-Pelham Park,0.0
+cat__Neighbourhood_Yonge-St.Clair,0.0
