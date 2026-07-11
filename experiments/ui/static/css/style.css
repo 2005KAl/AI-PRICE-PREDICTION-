@@ -1,0 +1,86 @@
+:root {
+  --bg-0: #07111f;
+  --bg-1: #0b1830;
+  --card: rgba(12, 22, 39, 0.72);
+  --card-strong: rgba(16, 28, 49, 0.88);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #ecf4ff;
+  --muted: #aab8cd;
+  --accent: #4fa3ff;
+  --accent-2: #1d7cf2;
+  --success: #3ddc97;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(79, 163, 255, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(61, 220, 151, 0.10), transparent 24%),
+    linear-gradient(160deg, #050b15 0%, #09111f 55%, #0e172a 100%);
+  min-height: 100vh;
+}
+
+body.light-mode {
+  --bg-0: #eef5ff;
+  --bg-1: #dfeafe;
+  --card: rgba(255, 255, 255, 0.76);
+  --card-strong: rgba(255, 255, 255, 0.92);
+  --border: rgba(10, 20, 38, 0.10);
+  --text: #0d1b2f;
+  --muted: #5a6880;
+  --shadow: 0 24px 60px rgba(20, 40, 70, 0.14);
+  background:
+    radial-gradient(circle at top left, rgba(79, 163, 255, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(61, 220, 151, 0.12), transparent 24%),
+    linear-gradient(160deg, #eef6ff 0%, #edf4ff 55%, #f9fbff 100%);
+}
+
+.app-shell {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.ambient {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(40px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-nav,
+.glass-card,
+.loading-card {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.brand-title,
+.hero-title,
+.section-heading,
+.price-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.price-display { font-size: 2.4rem; font-weight: 700; }
+
+/* Minimal adjustments for experiments UI */
+#map { height: 460px; border-radius: 14px; }
