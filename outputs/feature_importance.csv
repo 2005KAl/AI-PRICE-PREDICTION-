@@ -1,0 +1,156 @@
+Feature,Importance
+cat__home_type_bucket_CONDO,0.3686727
+num__estimated_area_sqft,0.1359807
+num__bathrooms,0.10180107
+cat__home_type_CONDO,0.051188618
+cat__home_type_DUPLEX_TRIPLEX_FOURPLEX,0.02667257
+cat__home_type_bucket_DUPLEX_TRIPLEX_FOURPLEX,0.022911219
+cat__Neighbourhood_Annex,0.021171486
+cat__Neighbourhood_Rosedale-Moore Park,0.016600125
+cat__Neighbourhood_Forest Hill South,0.014283397
+num__Distance_to_Subway,0.014178859
+cat__Neighbourhood_Casa Loma,0.01238805
+cat__home_type_HOUSE,0.0104148425
+cat__Neighbourhood_Wellington Place,0.010200981
+num__Distance_to_Library,0.009676733
+num__Schools_Within_2km,0.009653804
+num__bedrooms,0.009272887
+cat__Neighbourhood_Greenwood-Coxwell,0.00905448
+num__Restaurants_Within_1km,0.0083312765
+cat__Neighbourhood_Lawrence Park South,0.008284123
+num__Distance_to_Hospital,0.0071636303
+num__Parks_Within_2km,0.0070737256
+num__longitude,0.007027028
+num__Distance_to_Bank,0.0060906964
+num__Distance_to_Grocery,0.005948667
+cat__Neighbourhood_Maple Leaf,0.005641507
+cat__Neighbourhood_The Beaches,0.0054989574
+cat__Neighbourhood_Weston-Pelham Park,0.005343912
+cat__home_type_bucket_HOUSE,0.0051579173
+num__Distance_to_Park,0.004791969
+num__Distance_to_Pharmacy,0.0045129866
+num__bedrooms_plus,0.0042882743
+cat__Neighbourhood_Bridle Path-Sunnybrook-York Mills,0.0042641424
+num__Distance_to_School,0.0037080091
+cat__Neighbourhood_Mount Pleasant East,0.0032431043
+num__latitude,0.003029316
+cat__Neighbourhood_Yonge-St.Clair,0.0029243855
+cat__Neighbourhood_Junction-Wallace Emerson,0.0028223768
+cat__Neighbourhood_Downtown Yonge East,0.0027259022
+cat__Neighbourhood_Yonge-Eglinton,0.002664246
+cat__Neighbourhood_East End-Danforth,0.0026609832
+cat__Neighbourhood_North Riverdale,0.0025192685
+cat__Neighbourhood_South Parkdale,0.0020213025
+cat__Neighbourhood_University,0.0018551521
+cat__Neighbourhood_Cabbagetown-South St.James Town,0.0017317683
+cat__Neighbourhood_Bay-Cloverhill,0.001717458
+cat__Neighbourhood_Briar Hill-Belgravia,0.0014780917
+cat__Neighbourhood_High Park-Swansea,0.0013770938
+cat__Neighbourhood_Church-Wellesley,0.0013666414
+cat__Neighbourhood_Corso Italia-Davenport,0.0013497653
+cat__Neighbourhood_Dovercourt Village,0.0013469511
+cat__Neighbourhood_Danforth,0.0012035072
+cat__Neighbourhood_Trinity-Bellwoods,0.0010941284
+cat__Neighbourhood_Lawrence Park North,0.0010789162
+cat__Neighbourhood_Forest Hill North,0.0010788398
+cat__Neighbourhood_Yonge-Bay Corridor,0.0010034684
+cat__Neighbourhood_East Willowdale,0.000990809
+cat__Neighbourhood_Palmerston-Little Italy,0.00096816063
+cat__Neighbourhood_Wychwood,0.000963112
+cat__Neighbourhood_Dufferin Grove,0.00093172723
+cat__Neighbourhood_Runnymede-Bloor West Village,0.0009083726
+cat__Neighbourhood_St Lawrence-East Bayfront-The Islands,0.0008720615
+cat__Neighbourhood_High Park North,0.0008656999
+cat__Neighbourhood_Junction Area,0.0008444808
+cat__Neighbourhood_South Eglinton-Davisville,0.00081670575
+cat__Neighbourhood_North Toronto,0.00080546405
+cat__Neighbourhood_Clairlea-Birchmount,0.0007688087
+cat__Neighbourhood_South Riverdale,0.0007630833
+cat__Neighbourhood_Woodbine Corridor,0.0007232154
+cat__Neighbourhood_Mimico-Queensway,0.000715464
+cat__Neighbourhood_Little Portugal,0.00067028636
+cat__Neighbourhood_Blake-Jones,0.0006237019
+cat__Neighbourhood_Playter Estates-Danforth,0.000607678
+cat__Neighbourhood_Regent Park,0.0005853694
+cat__Neighbourhood_Roncesvalles,0.00056287274
+cat__Neighbourhood_Kensington-Chinatown,0.0005144376
+cat__Neighbourhood_West Queen West,0.0004527146
+cat__Neighbourhood_Moss Park,0.00041284645
+cat__Neighbourhood_Lambton Baby Point,0.00038563236
+cat__Neighbourhood_Banbury-Don Mills,0.00037203328
+cat__Neighbourhood_West Hill,0.0003563576
+cat__Neighbourhood_Humber Bay Shores,0.0003467911
+cat__Neighbourhood_Islington,0.00033717978
+cat__Neighbourhood_Bedford Park-Nortown,0.00027400206
+cat__Neighbourhood_Rockcliffe-Smythe,0.00026981294
+cat__Neighbourhood_Englemount-Lawrence,0.00026191404
+cat__Neighbourhood_Harbourfront-CityPlace,0.00025321788
+cat__Neighbourhood_Willowridge-Martingrove-Richview,0.00023786373
+cat__Neighbourhood_Pelmo Park-Humberlea,0.00023426807
+cat__Neighbourhood_Fort York-Liberty Village,0.00022592685
+cat__Neighbourhood_St.Andrew-Windfields,0.00015636344
+cat__Neighbourhood_Rexdale-Kipling,0.00010108019
+cat__Neighbourhood_Birchcliffe-Cliffside,0.000100284655
+cat__Neighbourhood_Dorset Park,5.6895056e-05
+cat__Neighbourhood_Eringate-Centennial-West Deane,4.3029886e-05
+cat__Neighbourhood_Willowdale West,4.062833e-05
+cat__Neighbourhood_Wexford/Maryvale,3.766089e-05
+cat__home_type_bucket_OTHER_RESIDENTIAL,0.0
+cat__home_type_OTHER_RESIDENTIAL,0.0
+cat__home_type_TOWNHOUSE,0.0
+cat__home_type_bucket_TOWNHOUSE,0.0
+cat__Neighbourhood_Etobicoke City Centre,0.0
+cat__Neighbourhood_Edenbridge-Humber Valley,0.0
+cat__Neighbourhood_Eglinton East,0.0
+cat__Neighbourhood_Fenside-Parkwoods,0.0
+cat__Neighbourhood_Elms-Old Rexdale,0.0
+cat__Neighbourhood_Humber Heights-Westmount,0.0
+cat__Neighbourhood_East L'Amoreaux,0.0
+cat__Neighbourhood_Black Creek,0.0
+cat__Neighbourhood_Bendale-Glen Andrew,0.0
+cat__Neighbourhood_Beechborough-Greenbrook,0.0
+cat__Neighbourhood_Agincourt South-Malvern West,0.0
+cat__Neighbourhood_Avondale,0.0
+cat__Neighbourhood_Bathurst Manor,0.0
+cat__Neighbourhood_Bayview Village,0.0
+cat__Neighbourhood_Bayview Woods-Steeles,0.0
+cat__Neighbourhood_Cliffcrest,0.0
+cat__Neighbourhood_Clanton Park,0.0
+cat__Neighbourhood_Danforth East York,0.0
+cat__Neighbourhood_Brookhaven-Amesbury,0.0
+cat__Neighbourhood_Downsview,0.0
+cat__Neighbourhood_Flemingdon Park,0.0
+cat__Neighbourhood_Glenfield-Jane Heights,0.0
+cat__Neighbourhood_Guildwood,0.0
+cat__Neighbourhood_L'Amoreaux West,0.0
+cat__Neighbourhood_Kingsview Village-The Westway,0.0
+cat__Neighbourhood_Keelesdale-Eglinton West,0.0
+cat__Neighbourhood_Humewood-Cedarvale,0.0
+cat__Neighbourhood_Henry Farm,0.0
+cat__Neighbourhood_Highland Creek,0.0
+cat__Neighbourhood_Old East York,0.0
+cat__Neighbourhood_Parkwoods-O'Connor Hills,0.0
+cat__Neighbourhood_Milliken,0.0
+cat__Neighbourhood_Malvern East,0.0
+cat__Neighbourhood_Lansing-Westgate,0.0
+cat__Neighbourhood_Leaside-Bennington,0.0
+cat__Neighbourhood_Mount Olive-Silverstone-Jamestown,0.0
+cat__Neighbourhood_New Toronto,0.0
+cat__Neighbourhood_Newtonbrook East,0.0
+cat__Neighbourhood_Newtonbrook West,0.0
+cat__Neighbourhood_Oakdale-Beverley Heights,0.0
+cat__Neighbourhood_Oakwood Village,0.0
+cat__Neighbourhood_O'Connor-Parkview,0.0
+cat__Neighbourhood_North St.James Town,0.0
+cat__Neighbourhood_Tam O'Shanter-Sullivan,0.0
+cat__Neighbourhood_Stonegate-Queensway,0.0
+cat__Neighbourhood_Thistletown-Beaumond Heights,0.0
+cat__Neighbourhood_Taylor-Massey,0.0
+cat__Neighbourhood_West Humber-Clairville,0.0
+cat__Neighbourhood_Thorncliffe Park,0.0
+cat__Neighbourhood_Westminster-Branson,0.0
+cat__Neighbourhood_Weston,0.0
+cat__Neighbourhood_Woburn North,0.0
+cat__Neighbourhood_Woodbine-Lumsden,0.0
+cat__Neighbourhood_Yonge-Doris,0.0
+cat__Neighbourhood_Yorkdale-Glen Park,0.0

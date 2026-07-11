@@ -1,0 +1,1002 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-07-11T08:56:01Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/5520155",
+        "addr:housenumber": "2867",
+        "addr:street": "Ellesmere Road",
+        "alt_name": "SHN Centenary",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "loc_name": "Centenary Hospital",
+        "name": "Scarborough Health Network - Centenary Hospital",
+        "operator": "Scarborough Health Network",
+        "operator:type": "public",
+        "wikidata": "Q7370778",
+        "wikipedia": "en:Centenary Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.2044451,
+          43.7804685
+        ]
+      },
+      "id": "way/5520155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/22793935",
+        "addr:city": "Toronto",
+        "addr:housenumber": "1001",
+        "addr:postcode": "M6J 1H4",
+        "addr:street": "Queen Street West",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Centre For Addiction and Mental Health - Queen Street Site",
+        "operator": "Centre For Addiction and Mental Health",
+        "short_name": "CAMH",
+        "wikidata": "Q2945513",
+        "wikipedia": "en:Centre for Addiction and Mental Health",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4186304,
+          43.6430054
+        ]
+      },
+      "id": "way/22793935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/26949564",
+        "addr:housenumber": "3276",
+        "addr:street": "St Clair Avenue East",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Providence Healthcare",
+        "operator": "Unity Health Toronto",
+        "wikidata": "Q7252433",
+        "wikipedia": "en:Providence Healthcare (Toronto)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.2852621,
+          43.7126507
+        ]
+      },
+      "id": "way/26949564"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/27006473",
+        "addr:city": "Toronto",
+        "addr:housenumber": "2075",
+        "addr:postcode": "M4N 3M5",
+        "addr:street": "Bayview Avenue",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Sunnybrook Health Sciences Centre - Bayview Campus",
+        "operator": "Sunnybrook Health Sciences Centre",
+        "operator:type": "university",
+        "phone": "+1-416-480-6100",
+        "website": "https://www.sunnybrook.ca/",
+        "wikidata": "Q7640789",
+        "wikipedia": "en:Sunnybrook Health Sciences Centre",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3738222,
+          43.7227903
+        ]
+      },
+      "id": "way/27006473"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/34006717",
+        "addr:city": "Etobicoke",
+        "addr:housenumber": "150",
+        "addr:street": "Sherway Drive",
+        "amenity": "hospital",
+        "check_date": "2025-06-28",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Queensway Health Centre",
+        "operator": "Trillium Health Partners",
+        "urgent_care_centre": "yes",
+        "urgent_care_centre:opening_hours": "Mo-Su 8:00-22:00",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.5621678,
+          43.6099953
+        ]
+      },
+      "id": "way/34006717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/43805626",
+        "addr:city": "Toronto",
+        "addr:housenumber": "399",
+        "addr:postcode": "M5T 2S8",
+        "addr:street": "Bathurst Street",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "landuse": "government",
+        "name": "Toronto Western Hospital",
+        "operator": "University Health Network",
+        "wheelchair": "yes",
+        "wikidata": "Q7826568",
+        "wikipedia": "en:Toronto Western Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.405488,
+          43.6534739
+        ]
+      },
+      "id": "way/43805626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/43809864",
+        "amenity": "hospital",
+        "attribution": "Natural Resources Canada",
+        "building": "hospital",
+        "canvec:CODE": "2010252",
+        "canvec:UUID": "ac38bf0b884f464a99bdc1194811c1b5",
+        "healthcare": "hospital",
+        "name": "Mount Sinai Hospital",
+        "source": "CanVec_Import_2009",
+        "website": "https://www.mountsinai.on.ca/care/rmcad/programs/chiropractic-spine-clinic",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3917604,
+          43.6579066
+        ]
+      },
+      "id": "way/43809864"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/152167667",
+        "addr:city": "Toronto",
+        "addr:housenumber": "30",
+        "addr:street": "The Queensway",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "landuse": "government",
+        "name": "St. Joseph's Health Centre",
+        "operator": "Unity Health Toronto",
+        "wikidata": "Q14875435",
+        "wikipedia": "en:St. Joseph's Health Centre",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4498726,
+          43.6403559
+        ]
+      },
+      "id": "way/152167667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/308980633",
+        "addr:postcode": "2283",
+        "addr:street": "Cnr Cary Street & Excelsior Parade",
+        "addr:suburb": "Toronto",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Toronto Private Hospital",
+        "operator:type": "private",
+        "phone": "+61 2 4950 4477",
+        "website": "https://torontoprivate.com.au",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.5933954,
+          -33.0153634
+        ]
+      },
+      "id": "way/308980633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/437519686",
+        "addr:city": "Toronto",
+        "addr:housenumber": "14",
+        "addr:postcode": "M4M 2B5",
+        "addr:street": "St. Matthews Road",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Hennick Bridgepoint Hospital",
+        "operator": "Sinai Health System",
+        "website": "https://www.hennickbridgepointhospital.ca",
+        "wikidata": "Q4966552",
+        "wikipedia": "en:Hennick Bridgepoint Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3545719,
+          43.6663683
+        ]
+      },
+      "id": "way/437519686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/447744987",
+        "addr:housenumber": "825",
+        "addr:street": "Coxwell Avenue",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Michael Garron Hospital",
+        "old_name": "Toronto East General Hospital",
+        "operator": "Michael Garron Hospital",
+        "operator:type": "university",
+        "wikidata": "Q7826339",
+        "wikipedia": "en:Toronto East General Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3249288,
+          43.6899416
+        ]
+      },
+      "id": "way/447744987"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/486817681",
+        "addr:city": "Toronto",
+        "addr:housenumber": "625",
+        "addr:postcode": "M6S 3A3",
+        "addr:street": "Runnymede Road",
+        "amenity": "hospital",
+        "check_date": "2025-05-08",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Runnymede Healthcare Centre",
+        "operator": "Runnymede Healthcare Centre",
+        "wikidata": "Q106589251",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.480969,
+          43.6645126
+        ]
+      },
+      "id": "way/486817681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/670281258",
+        "addr:housenumber": "101",
+        "addr:street": "Humber College Boulevard",
+        "alt_name": "William Osler Health System - Etobicoke General Hospital",
+        "amenity": "hospital",
+        "check_date": "2026-06-12",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Etobicoke General Hospital",
+        "operator": "William Osler Health System",
+        "wikidata": "Q5404740",
+        "wikipedia": "en:Etobicoke General Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.5983328,
+          43.7290395
+        ]
+      },
+      "id": "way/670281258"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/671599453",
+        "addr:city": "York",
+        "addr:housenumber": "82",
+        "addr:street": "Buttonwood Avenue",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "West Park Healthcare Centre",
+        "operator": "West Park Healthcare Centre",
+        "wikidata": "Q30281130",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.507805,
+          43.688956
+        ]
+      },
+      "id": "way/671599453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/673002279",
+        "addr:city": "North York",
+        "addr:housenumber": "1235",
+        "addr:postcode": "M3M 0B2",
+        "addr:province": "ON",
+        "addr:street": "Wilson Avenue",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Hennick Humber Hospital",
+        "operator": "Hennick Humber Hospital",
+        "website": "https://www.hrh.ca/",
+        "wikidata": "Q5939824",
+        "wikipedia": "en:Hennick Humber Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4882486,
+          43.7232868
+        ]
+      },
+      "id": "way/673002279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678430199",
+        "addr:city": "North York",
+        "addr:housenumber": "555",
+        "addr:street": "Finch Avenue West",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "North York General Hospital - Finch Site",
+        "note": "hospital closing, should be fully closed by 2020",
+        "operator": "North York General Hospital",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4472432,
+          43.7716107
+        ]
+      },
+      "id": "way/678430199"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678508080",
+        "addr:city": "Toronto",
+        "addr:housenumber": "3560",
+        "addr:postcode": "M6A 2E1",
+        "addr:province": "Ontario",
+        "addr:street": "Bathurst Street",
+        "amenity": "hospital",
+        "emergency": "no",
+        "fax": "+1-416-785-2378",
+        "healthcare": "hospital",
+        "name": "Baycrest Health Sciences",
+        "operator": "Baycrest Health Sciences",
+        "operator:type": "government",
+        "phone": "+1-416-785-2500",
+        "website": "https://www.baycrest.org",
+        "wheelchair": "yes",
+        "wikidata": "Q4874399",
+        "wikipedia": "en:Baycrest Health Sciences",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.435417,
+          43.7298827
+        ]
+      },
+      "id": "way/678508080"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/681295729",
+        "addr:housenumber": "3050",
+        "addr:street": "Lawrence Avenue East",
+        "alt_name": "SHN General",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "loc_name": "Scarborough General Hospital",
+        "name": "Scarborough Health Network - General Campus",
+        "operator": "Scarborough Health Network",
+        "wikidata": "Q7762393",
+        "wikipedia": "en:Scarborough Health Network",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.2482821,
+          43.7564752
+        ]
+      },
+      "id": "way/681295729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/681295730",
+        "addr:housenumber": "3030",
+        "addr:street": "Birchmount Road",
+        "alt_name": "SHN Birchmount",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "loc_name": "Birchmount Hospital",
+        "name": "Scarborough Health Network - Birchmount Hospital",
+        "old_name": "Scarborough Grace Hospital",
+        "operator": "Scarborough Health Network",
+        "operator:type": "public",
+        "wikidata": "Q65041693",
+        "wikipedia": "en:Birchmount Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3092539,
+          43.8016698
+        ]
+      },
+      "id": "way/681295730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/684426041",
+        "addr:housenumber": "285",
+        "addr:street": "Cummer Avenue",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Sunnybrook - St. John's Rehab Hospital",
+        "operator": "Sunnybrook Health Sciences Centre",
+        "wikidata": "Q7588825",
+        "wikipedia:en": "St. John's Rehab Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4042065,
+          43.7873316
+        ]
+      },
+      "id": "way/684426041"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/684426043",
+        "addr:city": "North York",
+        "addr:housenumber": "4001",
+        "addr:street": "Leslie Street",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "North York General Hospital",
+        "operator": "North York General Hospital",
+        "website": "https://www.nygh.on.ca/",
+        "wikidata": "Q14875360",
+        "wikipedia": "en:North York General Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3625755,
+          43.7692346
+        ]
+      },
+      "id": "way/684426043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/684431219",
+        "addr:city": "North York",
+        "addr:housenumber": "175",
+        "addr:province": "Ontario",
+        "addr:street": "Brentcliffe Road",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3665375,
+          43.7195023
+        ]
+      },
+      "id": "way/684431219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/684431220",
+        "addr:city": "North York",
+        "addr:housenumber": "345",
+        "addr:street": "Rumsey Road",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Toronto Rehab Institute - Rumsey Centre",
+        "opendata:type": "101001",
+        "operator": "University Health Network",
+        "wikidata": "Q7826496",
+        "wikipedia": "en:Toronto Rehabilitation Institute",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3717391,
+          43.7188001
+        ]
+      },
+      "id": "way/684431220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/684431221",
+        "addr:city": "North York",
+        "addr:housenumber": "520",
+        "addr:province": "Ontario",
+        "addr:street": "Sutherland Drive",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Toronto Rehab - Lyndhurst Centre",
+        "operator": "University Health Network",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3697368,
+          43.7191173
+        ]
+      },
+      "id": "way/684431221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/684431222",
+        "addr:housenumber": "150",
+        "addr:postcode": "M4G 1R8",
+        "addr:street": "Kilgour Road",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "healthcare:speciality": "paediatrics",
+        "name": "Holland Bloorview Kids Rehabilitation Hospital",
+        "operator": "Holland Bloorview Kids Rehabilitation Hospital",
+        "website": "https://www.hollandbloorview.ca/",
+        "wheelchair": "yes",
+        "wikidata": "Q5880924",
+        "wikipedia": "en:Holland Bloorview Kids Rehabilitation Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3735208,
+          43.7185764
+        ]
+      },
+      "id": "way/684431222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712075200",
+        "addr:city": "York",
+        "addr:housenumber": "200",
+        "addr:street": "Church Street",
+        "amenity": "hospital",
+        "check_date": "2024-03-15",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Reactivation Care Center",
+        "website": "https://www.hrh.ca/covid-19/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.5105994,
+          43.7095847
+        ]
+      },
+      "id": "way/712075200"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712078928",
+        "addr:housenumber": "200",
+        "addr:postcode": "M5G 2C4",
+        "addr:street": "Elizabeth Street",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Toronto General Hospital",
+        "operator": "University Health Network",
+        "operator:short": "UHN",
+        "operator:wikidata": "Q7894718",
+        "phone": "+1-416-340-4800",
+        "short_name": "TGH",
+        "website": "https://www.uhn.ca/OurHospitals/TGH",
+        "wheelchair": "yes",
+        "wikidata": "Q2444359",
+        "wikipedia": "en:Toronto General Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3881573,
+          43.6586555
+        ]
+      },
+      "id": "way/712078928"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712078929",
+        "addr:city": "Toronto",
+        "addr:housenumber": "555",
+        "addr:street": "University Avenue",
+        "alt_name": "SickKids Hospital",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "internet_access": "wlan",
+        "name": "Hospital for Sick Children",
+        "opening_hours": "24/7",
+        "operator": "Hospital for Sick Children",
+        "phone": "+1-416-813-1500",
+        "toilets": "yes",
+        "website": "https://www.sickkids.ca/",
+        "wikidata": "Q3140964",
+        "wikipedia": "en:The Hospital for Sick Children (Toronto)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3875736,
+          43.6572585
+        ]
+      },
+      "id": "way/712078929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712078930",
+        "addr:housenumber": "550",
+        "addr:street": "University Avenue",
+        "amenity": "hospital",
+        "check_date": "2026-06-12",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Toronto Rehab",
+        "operator": "University Health Network",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q7826496",
+        "wikipedia": "en:Toronto Rehabilitation Institute",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3899878,
+          43.6566946
+        ]
+      },
+      "id": "way/712078930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712078931",
+        "addr:housenumber": "600",
+        "addr:postcode": "M5G 1X5",
+        "addr:street": "University Avenue",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Mount Sinai Hospital",
+        "operator": "Sinai Health System",
+        "operator:wikidata": "Q48865137",
+        "phone": "+1-416-596-4200",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.sinaihealth.ca/our-hospitals/mount-sinai-hospital",
+        "wheelchair": "yes",
+        "wikidata": "Q13650874",
+        "wikipedia": "en:Mount Sinai Hospital (Toronto)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.390327,
+          43.6574485
+        ]
+      },
+      "id": "way/712078931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712078932",
+        "addr:housenumber": "610",
+        "addr:postcode": "M5G 2M9",
+        "addr:street": "University Avenue",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "healthcare:speciality": "oncology",
+        "name": "Princess Margaret Cancer Centre",
+        "old_name": "Princess Margaret Hospital",
+        "operator": "University Health Network",
+        "operator:short": "UHN",
+        "operator:wikidata": "Q7894718",
+        "phone": "+1-416-946-2000",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.uhn.ca/PrincessMargaret",
+        "wheelchair": "yes",
+        "wikidata": "Q7244693",
+        "wikipedia": "en:Princess Margaret Cancer Centre",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3906375,
+          43.6581745
+        ]
+      },
+      "id": "way/712078932"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712078933",
+        "addr:city": "Toronto",
+        "addr:housenumber": "250",
+        "addr:postcode": "M5T 1R8",
+        "addr:province": "Ontario",
+        "addr:street": "College Street",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "landuse": "government",
+        "name": "Centre For Addiction and Mental Health - College Street Site",
+        "operator": "Centre For Addiction and Mental Health",
+        "short_name": "CAMH",
+        "wikidata": "Q5062350",
+        "wikipedia": "en:Centre for Addiction and Mental Health (College Street site)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3992698,
+          43.6590586
+        ]
+      },
+      "id": "way/712078933"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712078934",
+        "addr:city": "Toronto",
+        "addr:housenumber": "130",
+        "addr:postcode": "M6K 2R8",
+        "addr:street": "Dunn Avenue",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "E.W. Bickle Centre for Complex Continuing Care",
+        "note": "89 Close Avenue, 130 Dunn Avenue Toronto Rehab",
+        "operator": "University Health Network",
+        "phone": "+1-416-597-3422",
+        "website": "https://www.uhn.ca/corporate/Directions/Pages/directions_TRI_bickle.aspx",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4331466,
+          43.6353385
+        ]
+      },
+      "id": "way/712078934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712085019",
+        "addr:city": "Toronto",
+        "addr:housenumber": "43",
+        "addr:postcode": "M4Y 1H1",
+        "addr:street": "Wellesley Street East",
+        "amenity": "hospital",
+        "check_date": "2024-05-15",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "long_name": "Sunnybrook Health Sciences Centre - Holland Orthopaedic & Arthritic Centre",
+        "name": "Sunnybrook Holland Centre",
+        "operator": "Sunnybrook Health Sciences Centre",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3822952,
+          43.6650913
+        ]
+      },
+      "id": "way/712085019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712085020",
+        "addr:city": "Toronto",
+        "addr:housenumber": "30",
+        "addr:street": "Bond Street",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "St. Michael's Hospital",
+        "opening_hours": "24/7",
+        "operator": "Unity Health Toronto",
+        "phone": "+1-416-360-4000",
+        "stars": "7",
+        "stars:system": "10 star rating",
+        "toilets:wheelchair": "yes",
+        "website": "https://unityhealth.to/locations/st-michaels-hospital/",
+        "wheelchair": "yes",
+        "wikidata": "Q3145237",
+        "wikipedia": "en:St. Michael's Hospital (Toronto)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3778049,
+          43.6536319
+        ]
+      },
+      "id": "way/712085020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/712085021",
+        "addr:city": "Toronto",
+        "addr:housenumber": "76",
+        "addr:postcode": "M5S 1B2",
+        "addr:street": "Grenville Street",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Women's College Hospital",
+        "operator": "Women's College Hospital",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q3569760",
+        "wikipedia": "en:Women's College Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.387543,
+          43.661733
+        ]
+      },
+      "id": "way/712085021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/826840277",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Hillcrest Grounds",
+        "operator": "Hillcrest Reactivation Centre",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4155284,
+          43.6776637
+        ]
+      },
+      "id": "way/826840277"
+    }
+  ]
+}
