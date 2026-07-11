@@ -90,3 +90,141 @@ git push -u origin experiments/multi-model
 ```
 
 If you want me to create a pull request after pushing, say so and I'll open one and provide the PR link.
+
+---
+
+## Manual (Step-by-step) Guide
+
+This section is a complete manual to run, reproduce and inspect the experimental pipeline locally. Follow each step from a command prompt opened at the project root (the folder containing `app.py`).
+
+1) Create / activate your Python environment
+
+```bash
+python -m venv .venv
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+# or on cmd
+.\.venv\Scripts\activate.bat
+# or macOS / Linux
+source .venv/bin/activate
+```
+
+2) Install required packages
+
+The experiments use `xgboost`, `shap`, `pandas`, `scikit-learn`, and `flask` for the UI. Install them with:
+
+```bash
+pip install -r requirements.txt
+pip install xgboost shap flask
+```
+
+3) Verify the master processed dataset exists
+
+Confirm the project processed dataset is present at `data/processed/ml_dataset.csv`. This pipeline reads that file to create the experimental splits.
+
+```bash
+python -c "import pandas as pd; print(pd.read_csv('data/processed/ml_dataset.csv').shape)"
+```
+
+4) Create the experimental datasets
+
+Run the splitter to produce the three working CSVs in `experiments/data/`:
+
+```bash
+python experiments/scripts/split_dataset.py
+```
+
+You should see these files:
+
+- `experiments/data/condo_dataset.csv`
+- `experiments/data/lowdensity_dataset.csv`
+- `experiments/data/multiunit_dataset.csv`
+
+5) Fit per-group preprocessors
+
+Each dataset gets its own preprocessor saved to `experiments/preprocessing/`:
+
+```bash
+python experiments/scripts/preprocess_condo.py
+python experiments/scripts/preprocess_lowdensity.py
+python experiments/scripts/preprocess_multiunit.py
+```
+
+6) Train each specialized model (with hyperparameter tuning)
+
+Train and evaluate; outputs are saved under `experiments/models/` and `experiments/outputs/`.
+
+```bash
+python experiments/scripts/train_condo.py
+python experiments/scripts/train_lowdensity.py
+python experiments/scripts/train_multiunit.py
+```
+
+7) Generate comparison reports
+
+Aggregate the per-model metrics into a single comparison report:
+
+```bash
+python experiments/scripts/evaluate_models.py
+```
+
+8) Test prediction behavior vs baseline
+
+Run the quick test that generates `experiments/outputs/test_predictions_report.csv` comparing current single-model predictions to the new specialized models for representative home types:
+
+```bash
+python experiments/scripts/test_predictions.py
+```
+
+9) Run the isolated experimental UI (optional)
+
+The UI is intentionally isolated at `experiments/ui/` and runs on port 5001 by default.
+
+```bash
+pip install flask pandas
+cd experiments/ui
+python app.py
+# open http://localhost:5001
+```
+
+10) Review outputs and artifacts
+
+Key locations:
+
+- Datasets: `experiments/data/`
+- Preprocessors: `experiments/preprocessing/`
+- Models: `experiments/models/`
+- Outputs: `experiments/outputs/` (metrics, comparison report, feature importance, shap, error analysis)
+- UI: `experiments/ui/`
+
+11) Push changes and create PR (already done by assistant)
+
+If you need to push locally (instead of using the branch already created), run:
+
+```bash
+git checkout -b experiments/multi-model
+git add experiments/
+git commit -m "Add isolated experiments multi-model pipeline and UI"
+git push -u origin experiments/multi-model
+```
+
+To open a PR on GitHub, go to the URL suggested by `git push` or use the GitHub web UI.
+
+12) Troubleshooting
+
+- If `xgboost` or `shap` fails to install, ensure Microsoft Visual C++ build tools are available on Windows, or use a conda environment: `conda create -n exp python=3.10 && conda activate exp && conda install -c conda-forge xgboost shap`.
+- If you see sklearn pickle version warnings when loading older pickles, these are informational; re-generate the preprocessor/model under this environment to avoid them.
+- SHAP generation may be skipped for some models if XGBoost's categorical splitting or feature encoding isn't compatible — the pipeline falls back and saves a placeholder image.
+
+13) Reverting the experiment branch
+
+If you want to remove the `experiments/multi-model` branch from the remote:
+
+```bash
+git push origin --delete experiments/multi-model
+git branch -D experiments/multi-model
+```
+
+---
+
+If you'd like, I can open the GitHub Pull Request for the `experiments/multi-model` branch and add a short PR description and reviewers. Say `open PR` and I will create it and provide the PR link.
