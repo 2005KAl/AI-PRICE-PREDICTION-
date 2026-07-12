@@ -1,6 +1,9 @@
 import joblib
 from pathlib import Path
 
+import pandas as pd
+import numpy as np
+
 from scripts.common import normalize_home_type
 
 
@@ -31,6 +34,16 @@ def route_prediction(input_row: dict) -> float:
     model = joblib.load(MODEL_MAP[group])
     preprocessor = joblib.load(PREPROCESSOR_MAP[group])
 
-    frame = {key: [value] for key, value in input_row.items()}
-    processed = preprocessor.transform(frame)
+    # Ensure we pass a proper 2D table (DataFrame) to the preprocessor
+    df = pd.DataFrame([input_row])
+    # Align columns to what the preprocessor was fitted on so missing keys become NaN
+    if hasattr(preprocessor, "feature_names_in_"):
+        expected = list(preprocessor.feature_names_in_)
+        df = df.reindex(columns=expected)
+
+    # Some UI fields may be submitted as single-element lists (e.g. ['Downtown']).
+    # Convert list/tuple cells to their first element so encoders receive scalars.
+    df = df.applymap(lambda v: (v[0] if isinstance(v, (list, tuple)) and len(v) > 0 else (np.nan if isinstance(v, (list, tuple)) and len(v) == 0 else v)))
+
+    processed = preprocessor.transform(df)
     return float(model.predict(processed)[0])

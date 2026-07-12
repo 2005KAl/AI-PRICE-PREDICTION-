@@ -1,2 +1,2 @@
 Model,MAE,RMSE,R2,MAPE (%),Training Time (s),Prediction Time (s),Training Samples,Testing Samples,Feature Count,Best Parameters
-MultiUnit,415689.1406,712176.0168,0.3679,21.293,12.0815,0.0033,175,44,65,"{'subsample': 1.0, 'n_estimators': 400, 'min_child_weight': 1, 'max_depth': 5, 'learning_rate': 0.03, 'gamma': 0.2, 'colsample_bytree': 0.8}"
+MultiUnit,415689.1406,712176.0168,0.3679,21.293,8.4689,0.0027,175,44,65,"{'subsample': 1.0, 'n_estimators': 400, 'min_child_weight': 1, 'max_depth': 5, 'learning_rate': 0.03, 'gamma': 0.2, 'colsample_bytree': 0.8}"

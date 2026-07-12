@@ -1,2 +1,2 @@
 Model,MAE,RMSE,R2,MAPE (%),Training Time (s),Prediction Time (s),Training Samples,Testing Samples,Feature Count,Best Parameters
-Condo,129823.83,400286.5683,0.8177,12.3414,19.8426,0.0062,5465,1367,122,"{'subsample': 1.0, 'n_estimators': 200, 'min_child_weight': 5, 'max_depth': 7, 'learning_rate': 0.03, 'gamma': 0.2, 'colsample_bytree': 0.8}"
+Condo,129823.83,400286.5683,0.8177,12.3414,15.9809,0.0036,5465,1367,122,"{'subsample': 1.0, 'n_estimators': 200, 'min_child_weight': 5, 'max_depth': 7, 'learning_rate': 0.03, 'gamma': 0.2, 'colsample_bytree': 0.8}"

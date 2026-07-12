@@ -1,2 +1,2 @@
 Model,MAE,RMSE,R2,MAPE (%),Training Time (s),Prediction Time (s),Training Samples,Testing Samples,Feature Count,Best Parameters
-LowDensity,525014.0825,928569.7948,0.7761,19.4111,16.0477,0.003,1933,484,115,"{'subsample': 1.0, 'n_estimators': 200, 'min_child_weight': 1, 'max_depth': 3, 'learning_rate': 0.1, 'gamma': 0.1, 'colsample_bytree': 0.8}"
+LowDensity,525014.0825,928569.7948,0.7761,19.4111,13.093,0.0025,1933,484,115,"{'subsample': 1.0, 'n_estimators': 200, 'min_child_weight': 1, 'max_depth': 3, 'learning_rate': 0.1, 'gamma': 0.1, 'colsample_bytree': 0.8}"
