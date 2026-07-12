@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     parks: document.getElementById('parks'),
     schools: document.getElementById('schools'),
   };
+  const defaultPredictionAccuracy = (elements.predictionAccuracy?.textContent || '').trim() || '0.00%';
 
   const currencyFormatter = new Intl.NumberFormat('en-CA', {
     style: 'currency',
@@ -167,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.priceDisplay.textContent = data.predicted_price_formatted || currencyFormatter.format(data.predicted_price || 0);
     elements.neighbourhoodDisplay.textContent = data.neighbourhood || 'Unknown neighbourhood';
     elements.pricePerSqft.textContent = currencyFormatter.format(data.price_per_sqft || 0);
-    elements.predictionAccuracy.textContent = data.prediction_accuracy || '84.99%';
+     elements.predictionAccuracy.textContent = data.prediction_accuracy || defaultPredictionAccuracy;
     elements.homeTypeDisplay.textContent = data.home_type || '-';
     elements.timestamp.textContent = data.prediction_timestamp || new Date().toLocaleString();
 
@@ -263,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.priceDisplay.textContent = 'CAD $0';
     elements.neighbourhoodDisplay.textContent = 'Neighbourhood will appear here';
     elements.pricePerSqft.textContent = 'CAD $0';
-    elements.predictionAccuracy.textContent = '84.99%';
+    elements.predictionAccuracy.textContent = defaultPredictionAccuracy;
     elements.homeTypeDisplay.textContent = '-';
     elements.timestamp.textContent = 'Not generated yet';
     ['distance_school', 'distance_hospital', 'distance_park', 'distance_library', 'distance_bank', 'distance_pharmacy', 'distance_grocery', 'distance_subway'].forEach((id) => {

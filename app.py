@@ -80,6 +80,8 @@ FEATURE_COLUMNS = [
 
 ]
 MODEL_NAME = "XGBoost Regression"
+MODEL_ACCURACY_R2 = 0.8542
+MODEL_ACCURACY_PERCENT = f"{MODEL_ACCURACY_R2 * 100:.2f}%"
 
 # ==========================================================
 # DATA MODELS
@@ -242,6 +244,69 @@ def make_prediction_payload(feature_row: dict[str, Any]) -> pd.DataFrame:
     return pd.DataFrame([ordered_row], columns=FEATURE_COLUMNS)
 
 
+FINAL_FEATURE_ORDER = [
+    "num__latitude",
+    "num__longitude",
+    "num__bedrooms",
+    "num__bedrooms_plus",
+    "num__bathrooms",
+    "num__estimated_area_sqft",
+    "num__Distance_to_School",
+    "num__Distance_to_Hospital",
+    "num__Distance_to_Park",
+    "num__Distance_to_Library",
+    "num__Distance_to_Bank",
+    "num__Distance_to_Pharmacy",
+    "num__Distance_to_Grocery",
+    "num__Distance_to_Subway",
+    "num__Restaurants_Within_1km",
+    "num__Parks_Within_2km",
+    "num__Schools_Within_2km",
+    "home_type_CONDO",
+    "home_type_HOUSE",
+    "home_type_DUPLEX_TRIPLEX_FOURPLEX",
+    "neighbourhood_avg_logprice",
+]
+
+HOME_TYPE_MERGE_MAP = {
+    "CONDO": "CONDO",
+    "HOUSE": "HOUSE",
+    "DUPLEX_TRIPLEX_FOURPLEX": "DUPLEX_TRIPLEX_FOURPLEX",
+    "TOWNHOUSE": "DUPLEX_TRIPLEX_FOURPLEX",
+    "OTHER_RESIDENTIAL": "DUPLEX_TRIPLEX_FOURPLEX",
+}
+
+
+def build_improved_features(transformed_155col_df: pd.DataFrame, neighbourhood_name: str) -> pd.DataFrame:
+    row = transformed_155col_df.iloc[[0]].copy()
+
+    hometype_cols = [
+        "cat__home_type_CONDO",
+        "cat__home_type_DUPLEX_TRIPLEX_FOURPLEX",
+        "cat__home_type_HOUSE",
+        "cat__home_type_OTHER_RESIDENTIAL",
+        "cat__home_type_TOWNHOUSE",
+    ]
+    raw_home_type = row[hometype_cols].idxmax(axis=1).iloc[0].replace("cat__home_type_", "")
+    merged_home_type = HOME_TYPE_MERGE_MAP.get(raw_home_type, "HOUSE")
+
+    final_row: dict[str, Any] = {}
+    numeric_cols = [column for column in FINAL_FEATURE_ORDER if column.startswith("num__")]
+    for column in numeric_cols:
+        final_row[column] = row[column].iloc[0] if column in row.columns else 0.0
+
+    final_row["home_type_CONDO"] = 1 if merged_home_type == "CONDO" else 0
+    final_row["home_type_HOUSE"] = 1 if merged_home_type == "HOUSE" else 0
+    final_row["home_type_DUPLEX_TRIPLEX_FOURPLEX"] = 1 if merged_home_type == "DUPLEX_TRIPLEX_FOURPLEX" else 0
+
+    final_row["neighbourhood_avg_logprice"] = NEIGHBOURHOOD_PRICE_MAP.get(
+        neighbourhood_name,
+        GLOBAL_MEAN_LOG_PRICE,
+    )
+
+    return pd.DataFrame([final_row])[FINAL_FEATURE_ORDER]
+
+
 def compute_amenity_features(latitude: float, longitude: float) -> dict[str, Any]:
     nearest_features = {
         "Distance_to_School": AMENITY_INDEXES["schools"].nearest(latitude, longitude),
@@ -303,8 +368,17 @@ def predict_price(feature_row: dict[str, Any]) -> float:
             index=frame.index,
         )
 
-    prediction = MODEL.predict(transformed)[0]
-    return float(prediction)
+    try:
+        neighbourhood_name = feature_row.get("Neighbourhood") or feature_row.get("neighbourhood")
+        improved_features = build_improved_features(transformed, neighbourhood_name)
+        prediction_log = IMPROVED_MODEL.predict(improved_features)[0]
+        prediction_log = float(np.clip(prediction_log, 10.0, 18.0))
+        prediction = float(np.expm1(prediction_log))
+        return prediction
+    except Exception as exc:
+        print(f"Warning: improved model prediction failed ({exc}); falling back to legacy model.")
+        prediction = MODEL.predict(transformed)[0]
+        return float(prediction)
 
 
 def validate_request_payload(payload: dict[str, Any]):
@@ -405,6 +479,9 @@ MODEL = joblib.load(
         MODELS_DIR / "best_model.pkl",
     )
 )
+IMPROVED_MODEL = joblib.load(MODELS_DIR / "xgboost_final_model.pkl")
+NEIGHBOURHOOD_PRICE_MAP = joblib.load(MODELS_DIR / "neighbourhood_price_map.pkl")
+GLOBAL_MEAN_LOG_PRICE = float(np.mean(list(NEIGHBOURHOOD_PRICE_MAP.values())))
 
 ORIGINAL_FEATURES = joblib.load(MODELS_DIR / "original_features.pkl")
 
@@ -444,6 +521,7 @@ def index() -> str:
         "index.html",
         current_date=datetime.now().strftime("%B %d, %Y"),
         model_name=MODEL_NAME,
+        model_accuracy_percent=MODEL_ACCURACY_PERCENT,
         original_features=ORIGINAL_FEATURES,
     )
 
@@ -486,7 +564,7 @@ def predict() -> tuple[Any, int]:
             "home_type": home_type,
             "bedrooms": bedrooms,
             "bathrooms": bathrooms,
-            "prediction_accuracy": "84.99%",
+            "prediction_accuracy": MODEL_ACCURACY_PERCENT,
             "model_name": MODEL_NAME,
             "neighbourhood": amenity_data["neighbourhood"],
             "distance_school": round(amenity_data["nearest"]["Distance_to_School"]["distance_km"], 3),
