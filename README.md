@@ -1,194 +1,173 @@
-# Toronto House Price Prediction using AI
+# Toronto House Price Prediction
 
-A Flask-based web application that predicts Toronto house prices using an XGBoost regression model, neighborhood intelligence, and nearby amenity features.
+A Flask web application that estimates Toronto property prices with a trained XGBoost regression model. It combines property details with location-derived amenity and neighbourhood features, then displays the estimate and nearby points on an interactive map.
 
-The app combines a responsive Bootstrap frontend, a Leaflet map, and a Python backend that performs feature engineering at prediction time.
+> This project is an educational prediction tool, not a property valuation, appraisal, or financial recommendation.
 
-## What this project does
+## Project Overview
 
-Users enter a few property details, choose a home type, and set a location either manually or by clicking the map. The backend then:
+House prices depend on more than a property's size and room count. This project demonstrates a data-driven approach that incorporates property characteristics, Toronto neighbourhoods, and proximity to local amenities. Users provide a few details and a location, and the application returns an estimated price and contextual location information.
 
-- validates the request
-- finds the nearest amenities around the property
-- detects the neighborhood
-- builds the model feature vector
-- runs the XGBoost price prediction
-- returns a detailed JSON response used by the frontend
+## Problem and Solution
 
-## Main features
+Manual comparisons can overlook location factors or apply them inconsistently. The application uses a trained regression model and a repeatable feature pipeline to estimate a price from property inputs and nearby amenities. The browser UI sends a request to the Flask backend, which validates the inputs, calculates location features from the bundled datasets, runs the saved model, and returns a JSON result.
 
-- Flask backend with `GET /health` and `POST /predict`
-- XGBoost regression model for price estimation
-- Glassmorphism Bootstrap UI
-- Leaflet map with OpenStreetMap tiles
-- Click-to-fill latitude and longitude
-- Dark mode toggle
-- Loading overlay and prediction feedback
-- Nearby amenity cards and neighborhood display
-- Responsive layout for desktop and mobile
+## Key Features
 
-## Current input fields
+- Estimate a property's price and price per square foot.
+- Accept bedrooms, bathrooms, estimated area, home type, latitude, and longitude.
+- Choose a location by clicking the map or entering coordinates.
+- Calculate distances to the nearest school, hospital, park, library, bank, pharmacy, grocery store, and subway station.
+- Count restaurants within 1 km, and schools and parks within 2 km.
+- Resolve a Toronto neighbourhood from the bundled boundary data.
+- Display nearby amenities on a Leaflet map with a responsive dashboard and light/dark theme toggle.
+- Expose JSON prediction and health-check endpoints.
 
-The prediction form uses these values:
+## Technology Stack
 
-- Bedrooms
-- Bathrooms
-- Estimated Area (sqft)
-- Home Type
-- Latitude
-- Longitude
+| Area | Technologies |
+| --- | --- |
+| Backend | Python, Flask |
+| Data processing | pandas, NumPy, GeoPandas, Shapely |
+| Machine learning | scikit-learn preprocessing, XGBoost regression, joblib model loading |
+| Geospatial lookup | scikit-learn `BallTree` with haversine distances; GeoPandas spatial joins |
+| Frontend | HTML, CSS, JavaScript, Bootstrap 5 |
+| Mapping | Leaflet.js, OpenStreetMap tiles |
+| Data and artifacts | CSV, GeoJSON, serialized model and preprocessing files |
 
-Latitude and longitude are still required because the app uses them for the map, neighborhood lookup, and amenity distance calculations.
+Bootstrap, Bootstrap Icons, Leaflet, and web fonts are loaded by the page from external CDNs. Map tiles are requested from OpenStreetMap; these resources require network access in the browser.
 
-## Prediction output
+## System Architecture
 
-The frontend displays:
+```mermaid
+flowchart LR
+    U[User] --> UI[Browser UI<br/>HTML, CSS, JavaScript]
+    UI -->|POST /predict| API[Flask application]
+    API --> V[Input validation]
+    V --> GEO[Neighbourhood and amenity lookups<br/>bundled CSV and GeoJSON]
+    GEO --> FE[Feature assembly]
+    FE --> PP[Saved scikit-learn preprocessor]
+    PP --> ML[Saved XGBoost model]
+    ML --> API
+    API -->|JSON prediction and location details| UI
+    UI --> MAP[Leaflet map with OpenStreetMap tiles]
+```
 
-- Estimated Price
-- Price / Sq.Ft
-- Prediction Accuracy
-- Home Type
-- Neighborhood
-- Nearest amenity distances
-- Amenity counts
-- Prediction timestamp
-- Nearby points used by the map
+## Prediction Workflow
 
-## How the backend works
+1. The user enters property details and selects a location on the map or enters coordinates.
+2. The browser sends the inputs as JSON to `POST /predict`.
+3. Flask validates the values and calculates amenity distances, nearby amenity counts, and a neighbourhood.
+4. The backend builds the model's feature row and applies the saved preprocessing pipeline.
+5. The XGBoost model predicts a price.
+6. Flask returns the prediction, price per square foot, neighbourhood, amenity information, timestamp, and nearby map points.
+7. The browser updates the result panel and map.
 
-The main application logic lives in [app.py](app.py).
-
-At prediction time the app:
-
-1. reads the request payload
-2. validates bedrooms, bathrooms, estimated area, home type, latitude, and longitude
-3. computes nearest-school, hospital, park, library, bank, pharmacy, grocery, subway, and restaurant features
-4. resolves the Toronto neighborhood polygon
-5. builds the model input frame in the expected feature order
-6. applies the saved preprocessor
-7. runs the XGBoost model
-8. returns the prediction as JSON
-
-## Project structure
+## Repository Structure
 
 ```text
-IMPROVED ACCURACY/
+.
 ├── app.py
-├── README.md
-├── PROJECT_SUMMARY.md
 ├── requirements.txt
+├── PROJECT_SUMMARY.md
 ├── data/
-│   ├── toronto_real_estate_public_area.csv
-│   ├── cleaned data/
-│   │   ├── banks_clean.csv
-│   │   ├── grocery_clean.csv
-│   │   ├── hospitals_clean.csv
-│   │   ├── libraries_clean.csv
-│   │   ├── parks_clean.csv
-│   │   ├── pharmacies_clean.csv
-│   │   ├── properties_clean.csv
-│   │   ├── restaurants_clean.csv
-│   │   └── schools_clean.csv
-│   ├── processed/
-│   │   ├── ml_dataset.csv
-│   │   ├── X_test.csv
-│   │   ├── X_train.csv
-│   │   ├── y_test.csv
-│   │   └── y_train.csv
-│   └── raw/
-│       ├── banks.geojson
-│       ├── grocery_stores.geojson
-│       ├── hospitals.geojson
-│       ├── Neighbourhoods - 4326.geojson
-│       ├── Parks and Recreation Facilities - 4326.csv
-│       ├── pharmacies.geojson
-│       ├── restaurant.geojson
-│       ├── School locations-all types data - 4326.csv
-│       ├── subway stations .geojson
-│       └── tpl-branch-general-information - 4326.csv
-├── models/
-├── outputs/
-├── output/
-├── scripts/
+│   ├── cleaned data/       # Amenity and property CSVs used by the app
+│   ├── processed/          # ML dataset and train/test data
+│   ├── raw/                # Source CSV and GeoJSON files
+│   └── toronto_real_estate_public_area.csv
+├── models/                 # Trained regressors and preprocessing artifacts
+├── outputs/                # Evaluation metrics, predictions, and plots
+├── scripts/                # Data preparation, preprocessing, training, evaluation
 ├── static/
 │   ├── css/style.css
 │   └── js/script.js
-└── templates/
-    └── index.html
+└── templates/index.html
 ```
 
-## Required model files
+The application loads the following files when `app.py` starts:
 
-The app loads saved artifacts from `models/`.
+- `models/preprocessor.pkl`
+- `models/best_model.pkl` (the app prefers `best_model_tuned.pkl` if present)
+- `models/original_features.pkl`
+- Cleaned amenity CSVs in `data/cleaned data/`
+- Neighbourhood and subway GeoJSON files in `data/raw/`
 
-At minimum, the following files must exist:
+These artifacts and datasets are included in the repository. Keep the expected filenames and directory layout if replacing them.
 
-- `preprocessor.pkl`
-- `best_model.pkl` or `best_model_tuned.pkl`
-- `original_features.pkl`
+## Installation and Setup
 
-Depending on the training pipeline, other supporting files may also be present, such as `feature_names.pkl`.
+### Prerequisites
 
-## Required data files
+- Python 3.10 or newer.
+- Git.
+- Network access in the browser for the external frontend libraries, fonts, and map tiles.
 
-The backend expects the cleaned amenity datasets and Toronto neighborhood geometry to be available in `data/`.
-
-Most importantly, these files are used for nearest-amenity lookups and neighborhood detection:
-
-- `data/cleaned data/schools_clean.csv`
-- `data/cleaned data/parks_clean.csv`
-- `data/cleaned data/libraries_clean.csv`
-- `data/cleaned data/hospitals_clean.csv`
-- `data/cleaned data/banks_clean.csv`
-- `data/cleaned data/pharmacies_clean.csv`
-- `data/cleaned data/grocery_clean.csv`
-- `data/cleaned data/restaurants_clean.csv`
-- `data/raw/Neighbourhoods - 4326.geojson`
-- `data/raw/subway stations .geojson`
-
-## Setup
-
-### 1. Create and activate a virtual environment
+Clone the repository and enter its directory:
 
 ```bash
-python -m venv venv
+git clone https://github.com/2005KAl/AI-PRICE-PREDICTION-.git
+cd AI-PRICE-PREDICTION-
 ```
 
-Activate it on Windows:
+Create and activate a virtual environment.
+
+Windows:
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+macOS or Linux:
 
 ```bash
-venv\Scripts\activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-### 2. Install dependencies
+Install the listed dependencies and XGBoost, which is needed to load the saved prediction model:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install xgboost
 ```
 
-### 3. Start the app
+There is no database setup, API key, or environment variable required by the current application.
 
-Run the Flask application from the project root:
+## Running the Application
+
+Start the Flask application from the repository root:
 
 ```bash
 python app.py
 ```
 
-The app will usually be available at:
+Open [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in a browser. The application uses Flask's built-in development server; do not use its debug-mode configuration as a production deployment.
 
-```text
-http://127.0.0.1:5000/
-```
+## Usage
+
+1. Open the application in a browser.
+2. Enter the number of bedrooms and bathrooms, estimated area in square feet, and home type.
+3. Set the property's latitude and longitude directly, or click the map to fill them.
+4. Select **Predict Price**.
+5. Review the estimated price, price per square foot, neighbourhood, amenity distances and counts, and nearby markers.
+
+Supported home types are `Detached`, `Semi Detached`, `Townhouse`, `House`, `Condo`, `Duplex`, `Triplex`, and `Fourplex`.
 
 ## API
 
-### `GET /health`
+The prediction endpoint accepts JSON or form data. The browser sends JSON.
 
-Returns a simple status response for checking whether the backend is alive.
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `GET` | `/` | Serves the prediction interface. |
+| `GET` | `/health` | Returns a basic application/model status. |
+| `POST` | `/predict` | Validates inputs, computes location features, and returns a price estimate. |
 
 ### `POST /predict`
 
-Example request body:
+Required JSON fields:
 
 ```json
 {
@@ -201,43 +180,98 @@ Example request body:
 }
 ```
 
-Example response fields include:
+Bedrooms and bathrooms must be non-negative numbers; estimated area must be greater than zero. Home type must be one of the supported values above. Latitude and longitude must be within the valid global coordinate ranges. The application is trained around Toronto data, so coordinates outside Toronto do not produce a meaningful Toronto estimate.
 
-- `predicted_price`
-- `predicted_price_formatted`
-- `price_per_sqft`
-- `prediction_accuracy`
-- `home_type`
-- `neighbourhood`
-- distance values for the nearest amenities
-- nearby point lists for map use
+A successful response (`200`) contains:
 
-## Frontend notes for collaborators
+- `predicted_price`, `predicted_price_formatted`, and `price_per_sqft`
+- `estimated_area_sqft`, `home_type`, `bedrooms`, and `bathrooms`
+- `neighbourhood`, `model_name`, and `prediction_timestamp`
+- `distance_school`, `distance_hospital`, `distance_park`, `distance_library`, `distance_bank`, `distance_pharmacy`, `distance_grocery`, and `distance_subway` (kilometres)
+- `restaurants`, `parks`, and `schools` (nearby counts)
+- `property_latitude`, `property_longitude`, and `nearby_points`
+- `prediction_accuracy` (a fixed value described under [Results and Performance](#results-and-performance))
 
-The current UI is intentionally kept as a glassmorphism-style dashboard. Do not redesign the layout unless the task specifically asks for it.
+Invalid input and exceptions during prediction are returned as JSON with an `error` field and HTTP `400`. The endpoint does not require authentication.
 
-The existing frontend includes:
+### `GET /health`
 
-- navbar
-- property details form
-- prediction result section
-- amenity cards
-- Leaflet map
-- legend
-- footer
-- loading overlay
-- dark mode toggle
+Returns `200` with a JSON object containing `status` and `model`. This checks that the route responds; it is not a comprehensive readiness check of every dependency.
 
-## Working with the scripts folder
+## Machine Learning
 
-The `scripts/` directory contains the data preparation and modeling pipeline used to build the cleaned datasets and model artifacts. These scripts are useful if you need to retrain the model or reproduce the processed files.
+### Inputs and feature engineering
 
-## Troubleshooting
+The model predicts `price`. Training features include property and location characteristics such as home type, coordinates, bedrooms, bathrooms, estimated area, neighbourhood, distances to nearby amenities, and counts of selected amenities. At inference time, amenity and neighbourhood features are calculated from the included datasets rather than entered by the user.
 
-- If the app fails to start because of a missing package, reinstall the dependencies with `pip install -r requirements.txt`.
-- If the app cannot load a model artifact, check the contents of `models/` and make sure `best_model.pkl` or `best_model_tuned.pkl` exists.
-- If neighborhood or amenity lookups fail, confirm the files in `data/cleaned data/` and `data/raw/` are present.
+The application uses haversine distance with a `BallTree` to find nearby amenities and GeoPandas spatial joins to resolve a neighbourhood. The saved scikit-learn preprocessor imputes missing numerical values with the median, scales numerical features, imputes missing categorical values with the most frequent category, and one-hot encodes categorical values while ignoring unknown categories.
 
-## Summary
+### Training and inference
 
-This repository contains a complete end-to-end Toronto house price prediction app: data files, preprocessing artifacts, trained model, Flask backend, and the browser UI used to explore predictions.
+The training scripts compare Linear Regression, Decision Tree, Random Forest, XGBoost, and LightGBM regressors. The checked-in comparison reports XGBoost as the best model by RMSE, and `models/best_model.pkl` is loaded by the web application. The preprocessor and model are serialized with joblib.
+
+The scripts in `scripts/` are provided for data preparation and model experimentation. The saved artifacts are used for normal app startup; retraining is not required to run the application.
+
+To rerun preprocessing, training, and evaluation using the included processed dataset, install the additional training/evaluation libraries and run these commands from the repository root:
+
+```bash
+python -m pip install xgboost lightgbm matplotlib
+python scripts/preprocessing.py
+python scripts/train_model.py
+python scripts/evaluate.py
+```
+
+The preprocessing step creates the train/test files and preprocessing artifacts. Training writes model artifacts and comparison results; evaluation writes metrics and plots under `outputs/`.
+
+## Results and Performance
+
+The checked-in evaluation output reports the following metrics for the selected XGBoost model on the test data:
+
+| Metric | Value |
+| --- | ---: |
+| MAE | 231,733.60 |
+| RMSE | 588,055.21 |
+| R² | 0.8499 |
+| MAPE | 14.23% |
+
+These are evaluation results recorded in `outputs/evaluation_metrics.csv`, not a guarantee of accuracy for an individual property or for current market prices. The API's `prediction_accuracy` field is hard-coded to `84.99%`, corresponding approximately to the recorded R² expressed as a percentage; it is not a per-prediction confidence score or a conventional accuracy metric for regression.
+
+Additional evaluation artifacts, including a model comparison, predictions, feature-importance output, and plots, are available in `outputs/`.
+
+## Error Handling and Security
+
+- The prediction route checks required values, supported home types, non-negative bedroom and bathroom counts, positive area, and valid coordinate ranges.
+- Prediction failures are returned as JSON error messages with HTTP `400`; the frontend displays the message.
+- There is no authentication, authorization, or database integration.
+- Run the built-in debug server only for local development. A production deployment should use an appropriate WSGI server and review error handling and configuration before being exposed publicly.
+- Treat the estimate as informational; it is not professional real-estate or financial advice.
+
+## Testing
+
+No automated test suite is included in the repository. The model evaluation scripts under `scripts/` generate metrics and plots, but they are not a substitute for automated application or API tests.
+
+## Technical Highlights
+
+- Combines tabular property information with geospatially derived location features at inference time.
+- Uses haversine `BallTree` lookups for efficient nearest-amenity distances and counts.
+- Applies a persisted preprocessing pipeline so inference uses the same transformations as training.
+- Keeps the browser-facing application and prediction API in one Flask service.
+
+## Limitations and Future Improvements
+
+Current limitations:
+
+- The training and amenity data are specific to Toronto and may not represent other markets or current prices.
+- Input coordinates are checked against global bounds, not restricted to Toronto.
+- The displayed `prediction_accuracy` value is static and represents the test-set R² approximately, not an individual prediction's confidence.
+- The application depends on bundled datasets and model artifacts being present at their expected paths.
+- Some browser assets and map tiles are served by external providers.
+- The dependency list in `requirements.txt` does not include XGBoost, which is needed to load the checked-in model.
+
+Possible future work:
+
+- Add automated tests for validation, API responses, feature generation, and model loading.
+- Replace the static accuracy display with clearly labelled, validated evaluation information.
+- Add geographic bounds and more explicit error handling for unsupported locations or unavailable input data.
+- Record data provenance and update dates, and evaluate model quality on a documented, representative holdout set.
+- Add a production deployment configuration and pin model/runtime dependencies for reproducibility.
